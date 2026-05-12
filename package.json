@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio site with Tailwind CSS and TypeScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "tailwindcss -i ./style.css -o ./dist/style.css --watch",
+    "build": "tailwindcss -i ./style.css -o ./dist/style.css --minify && tsc script.ts --outDir dist --target es2020",
+    "watch": "concurrently \"npm run dev\" \"tsc script.ts --outDir dist --target es2020 --watch\"",
+    "deploy": "npm run build && echo 'Ready for deployment'"
+  },
+  "keywords": ["portfolio", "typescript", "tailwind"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "concurrently": "^8.2.0",
+    "typescript": "^5.3.0"
+  }
+}
