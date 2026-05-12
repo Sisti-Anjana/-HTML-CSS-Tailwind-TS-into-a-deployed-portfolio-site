@@ -33,16 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle contact form
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    const contactFormElement = document.getElementById('contact-form') as HTMLFormElement;
+    if (contactFormElement) {
+        contactFormElement.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // Get form values
-            const formData = new FormData(contactForm);
-            const name = (contactForm.elements[0] as HTMLInputElement).value;
-            const email = (contactForm.elements[1] as HTMLInputElement).value;
-            const message = (contactForm.elements[2] as HTMLTextAreaElement).value;
+            const name = (contactFormElement.elements[0] as HTMLInputElement).value;
+            const email = (contactFormElement.elements[1] as HTMLInputElement).value;
+            const message = (contactFormElement.elements[2] as HTMLTextAreaElement).value;
 
             // Validate inputs
             if (!name.trim() || !email.trim() || !message.trim()) {
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Success message (in real app, this would send to backend)
             showSuccessMessage('Thank you! Your message has been sent.');
-            contactForm.reset();
+            contactFormElement.reset();
         });
     }
 

@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "dev": "tailwindcss -i ./style.css -o ./dist/style.css --watch",
-    "build": "tailwindcss -i ./style.css -o ./dist/style.css --minify && tsc script.ts --outDir dist --target es2020",
-    "watch": "concurrently \"npm run dev\" \"tsc script.ts --outDir dist --target es2020 --watch\"",
+    "build": "tailwindcss -i ./style.css -o ./dist/style.css --minify && tsc script.ts --outDir dist --target es2020 --skipLibCheck",
+    "watch": "concurrently \"npm run dev\" \"tsc script.ts --outDir dist --target es2020 --watch --skipLibCheck\"",
     "deploy": "npm run build && echo 'Ready for deployment'"
   },
   "keywords": ["portfolio", "typescript", "tailwind"],
